@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #7785fe;
+  color: #616b74;
+  padding: 3rem 0.5rem 0.5rem;
+}
+
+.container {
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem 1rem 1.5rem;
+  position: relative;
+  margin: 0 auto;
+}
+
+section.settings-container .setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+section.settings-container .setting label {
+  font-weight: 80;
+  padding-right: 1rem;
+}
+section.settings-container .setting label span {
+  display: block;
+}
+section.settings-container .setting label span:first-of-type {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+section.settings-container .setting label span:last-of-type {
+  font-weight: 300;
+  color: #667583;
+  font-size: 0.7rem;
+  margin-top: 0.15rem;
+}
+section.settings-container .setting input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 50px;
+  min-width: 50px;
+  background-color: #CCCFD3;
+  height: 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+section.settings-container .setting input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 50%;
+  left: 30%;
+  transition: all 0.3s ease;
+}
+section.settings-container .setting input[type=checkbox]:checked {
+  background-color: #7785fe;
+}
+section.settings-container .setting input[type=checkbox]:checked::after {
+  left: 70%;
+}
+
+section.character-length {
+  margin: 3rem auto 2rem;
+  text-align: center;
+  display: flex;
+  padding: 1.5rem auto;
+}
+section.character-length p:first-of-type {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7785fe;
+}
+section.character-length p:last-of-type {
+  margin: 0.5rem auto 1rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #8E9BA7;
+}
+section.character-length input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2rem;
+}
+section.character-length input[type=range]::-webkit-slider-runnable-track {
+  background-color: #CCCFD3;
+  height: 0.5rem;
+}
+section.character-length input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #7785fe;
+  cursor: pointer;
+}
+section.character-length input[type=range]:focus::-webkit-slider-thumb {
+  border: 1px solid #7785fe;
+  outline: 3px solid #fff;
+  outline-offset: 0.125rem;
+}
+
+section.generated-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+section.generated-password input, section.generated-password button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  height: 3rem;
+}
+section.generated-password input {
+  width: 100%;
+  border: 1px solid #CCCFD3;
+  border-right: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: #F5F5F5;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  color: #616b74;
+  margin-right: 1rem;
+  outline: none;
+}
+section.generated-password button {
+  height: 3rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #CCCFD3;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #465059;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+section.generated-password button:hover {
+  background-color: #F5F5F5;
+}
+section.generated-password .confirmation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 0;
+  translate: all 0.1s ease;
+}
+section.generated-password .confirmation p {
+  transform: scale(0.2);
+  transition: all 0.2s ease;
+}
+section.generated-password .confirmation.active {
+  pointer-events: all;
+  opacity: 1;
+}
+section.generated-password .confirmation.active p {
+  transform: scale(1);
+}/*# sourceMappingURL=app.css.map */
