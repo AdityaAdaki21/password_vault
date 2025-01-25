@@ -51,11 +51,30 @@
       <section class="generated-password">
           <input type="text" id="generatePassword" class="generatePassword" spellcheck="false">
           <button id="copyPassword" class="copyPassword">Copy</button>
+          <button id="savePassword" class="savePassword">Save</button>
           <div class="confirmation" id="confirmation">
               <p>password copied</p>
           </div>
       </section>
 
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const supabaseUrl = 'https://your-supabase-url.supabase.co';
+    const supabaseKey = 'your-supabase-key';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    document.getElementById('savePassword').addEventListener('click', async () => {
+      const password = document.getElementById('generatePassword').value;
+      const { data, error } = await supabase
+        .from('passwords')
+        .insert([{ password }]);
+      if (error) {
+        console.error('Error saving password:', error);
+      } else {
+        console.log('Password saved:', data);
+      }
+    });
+  </script>
   </body>
 </html>
