@@ -154,3 +154,66 @@ button:hover {
     font-family: monospace;
     letter-spacing: 1px;
 }
+
+.credentials-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.credentials-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.saved-credentials {
+  margin-top: 20px;
+}
+
+.credential-item {
+  background: #f5f5f5;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-credential {
+  color: red;
+  cursor: pointer;
+}
+
+/* Credentials Tab Styles */
+.list-group-item {
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.delete-credential {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.delete-credential:hover {
+    opacity: 1;
+}
+
+.nav-tabs .nav-link {
+    cursor: pointer;
+}
+
+.tab-content {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+}
