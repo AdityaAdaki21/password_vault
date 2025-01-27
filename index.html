@@ -3,69 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link rel="stylesheet" href="_vercel/insights/style.css" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"/> -->
     <title>Password Vault</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="_vercel/insights/style.css">
   </head>
-  <body>
-    <div class="container">
-      <div id="authSection">
-        <nav>
-          <a href="login.html">Login</a>
-          <a href="signup.html">Signup</a>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div id="authSection" class="text-center">
+        <nav class="btn-group">
+          <a href="login.html" class="btn btn-outline-primary">Login</a>
+          <a href="signup.html" class="btn btn-outline-primary">Signup</a>
         </nav>
       </div>
 
-      <div id="generatorSection" style="display: none;">
-        <button id="logoutButton">Logout</button>
-        <div class="lock_icon_container">
-          <img src="" alt="" class="lock_icon">
+      <div id="generatorSection" style="display: none;" class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Password Generator</h5>
+          <button id="logoutButton" class="btn btn-sm btn-outline-danger">Logout</button>
         </div>
+        <div class="card-body">
+          <section class="settings-container mb-4">
+            <div class="form-check mb-2">
+              <input type="checkbox" class="form-check-input" id="includeDigits" checked>
+              <label class="form-check-label" for="includeDigits">Include Digits</label>
+            </div>
+            <div class="form-check mb-2">
+              <input type="checkbox" class="form-check-input" id="specialChar" checked>
+              <label class="form-check-label" for="specialChar">Include Special Characters</label>
+            </div>
+            <div class="form-check mb-2">
+              <input type="checkbox" class="form-check-input" id="includeLowHigh" checked>
+              <label class="form-check-label" for="includeLowHigh">Include Lowercase & Uppercase</label>
+            </div>
+          </section>
 
-        <section class="settings-container">
-          <div class="setting">
-              <label for="includeDigits">
-                  <span>Include Digits</span>
-                  <span></span>
-              </label>
-              <input type="checkbox" id="includeDigits" name="includeDigits" checked>
-          </div>
-          <div class="setting">
-              <label for="specialChar">
-                  <span>Include special Char</span>
-                  <span></span>
-              </label>
-              <input type="checkbox" id="specialChar" name="specialChar" checked>
-          </div>
-          <div class="setting">
-              <label for="includeLowHigh">
-                  <span>Include lowercase & Uppercase</span>
-                  <span></span>
-              </label>
-              <input type="checkbox" id="includeLowHigh" name="includeLowHigh" checked>
-          </div>
-        </section>
+          <section class="mb-4">
+            <p class="mb-1">Password length: <span id="characterLength" class="fw-bold">12</span> characters</p>
+            <input type="range" class="form-range" min="6" max="20" value="12" id="characterLengthSlider">
+          </section>
 
-        <section class="charcter-length">
-          <p>Your password will be <span id="characterLength">12</span> characters long</p>
-          <p>move the slider to change the length</p>
-          <input type="range" min="6" max="20" value="12" class="characterLengthSlider" id="characterLengthSlider">
-        </section>
-
-        <section class="generated-password">
-          <input type="text" id="generatePassword" class="generatePassword" spellcheck="false">
-          <button id="copyPassword" class="copyPassword">Copy</button>
-          <div class="confirmation" id="confirmation">
-              <p>password copied</p>
-          </div>
-        </section>
+          <section class="generated-password">
+            <div class="input-group mb-3">
+              <input type="text" id="generatePassword" class="form-control" spellcheck="false" readonly>
+              <button id="copyPassword" class="btn btn-primary">Copy</button>
+            </div>
+            <div id="confirmation" class="alert alert-success py-2 d-none">
+              Password copied!
+            </div>
+          </section>
+        </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
