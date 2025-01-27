@@ -14,11 +14,20 @@
   </head>
   <body>
     <div class="container">
-      <div class="lock_icon_container">
-          <img src="" alt="" class="lock_icon">
+      <div id="authSection">
+        <nav>
+          <a href="login.html">Login</a>
+          <a href="signup.html">Signup</a>
+        </nav>
       </div>
 
-      <section class="settings-container">
+      <div id="generatorSection" style="display: none;">
+        <button id="logoutButton">Logout</button>
+        <div class="lock_icon_container">
+          <img src="" alt="" class="lock_icon">
+        </div>
+
+        <section class="settings-container">
           <div class="setting">
               <label for="includeDigits">
                   <span>Include Digits</span>
@@ -40,22 +49,23 @@
               </label>
               <input type="checkbox" id="includeLowHigh" name="includeLowHigh" checked>
           </div>
-      </section>
+        </section>
 
-      <section class="charcter-length">
+        <section class="charcter-length">
           <p>Your password will be <span id="characterLength">12</span> characters long</p>
           <p>move the slider to change the length</p>
           <input type="range" min="6" max="20" value="12" class="characterLengthSlider" id="characterLengthSlider">
-      </section>
+        </section>
 
-      <section class="generated-password">
+        <section class="generated-password">
           <input type="text" id="generatePassword" class="generatePassword" spellcheck="false">
           <button id="copyPassword" class="copyPassword">Copy</button>
           <div class="confirmation" id="confirmation">
               <p>password copied</p>
           </div>
-      </section>
-
-  </div>
+        </section>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
